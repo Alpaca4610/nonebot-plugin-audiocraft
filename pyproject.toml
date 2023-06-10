@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "nonebot-plugin-audiocraft"
+version = "0.0.1"
+description = "A nonebot plugin for facebook's audiocraft"
+authors = ["Alpaca <alpaca@bupt.edu.cn>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+nonebot2 = "^2.0.0rc3"
+nonebot-adapter-onebot = "^2.2.1"
+gradio-client = "^0.2.6"
+
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+default = true 
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
