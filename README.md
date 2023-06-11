@@ -10,7 +10,7 @@
 </div>
 
 # 介绍
-- 本插件适配[Facebook开源的AI作曲模型](https://github.com/facebookresearch/audiocraft/blob/984b3755a1b37c85dcff24fb516b946ea75da4aa/audiocraft/modules/conditioners.py#L371)，在nonebot框架下调用已经部署好的模型后端服务器API进行AI作曲
+- 本插件适配[Facebook开源的AI作曲模型](https://github.com/facebookresearch/audiocraft/)，在nonebot框架下调用已经部署好的模型后端服务器API进行AI作曲
 - 本插件需要配合部署好的audiocraft进行使用
 
 # 安装

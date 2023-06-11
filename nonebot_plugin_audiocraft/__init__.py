@@ -16,7 +16,7 @@ __plugin_meta__ = PluginMetadata(
     每次重启机器人后，使用 %%后端服务器地址 绑定audiocraft后端服务器。
     绑定后端服务器后，使用 AI作曲+乐曲的英文描述 即可触发AI作曲。
     ''',
-    config="",
+    config= None,
     extra={},
     type="application",
     homepage="https://github.com/Alpaca4610/nonebot-plugin-audiocraft",
