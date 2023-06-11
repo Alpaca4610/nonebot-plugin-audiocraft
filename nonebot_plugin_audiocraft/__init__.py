@@ -2,10 +2,23 @@ import io
 from gradio_client import Client
 import nonebot
 
+from nonebot.plugin import PluginMetadata
 from nonebot import on_command
 from nonebot.params import CommandArg
 from nonebot.adapters.onebot.v11 import Message, MessageSegment
 
+
+__plugin_meta__ = PluginMetadata(
+    name="AI作曲",
+    description="Nonebot框架下的AI作曲插件",
+    usage=
+    '''
+    每次重启机器人后，使用 %%后端服务器地址 绑定audiocraft后端服务器。
+    绑定后端服务器后，使用 AI作曲+乐曲的英文描述 即可触发AI作曲。
+    ''',
+    config="",
+    extra={},
+)
 
 url = ""
 direct = on_command("AI作曲", block=False, priority=1)
