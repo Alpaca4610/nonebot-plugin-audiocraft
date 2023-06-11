@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-audiocraft"
-version = "0.0.2"
+version = "0.0.3"
 description = "A nonebot plugin for facebook's audiocraft"
 authors = ["Alpaca <alpaca@bupt.edu.cn>"]
 license = "MIT"

@@ -18,6 +18,9 @@ __plugin_meta__ = PluginMetadata(
     ''',
     config="",
     extra={},
+    type="application",
+    homepage="https://github.com/Alpaca4610/nonebot-plugin-audiocraft",
+    supported_adapters={"~onebot.v11"}
 )
 
 url = ""
