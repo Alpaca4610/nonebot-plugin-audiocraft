@@ -30,7 +30,7 @@
   pip install nonebot-plugin-audiocraft
   ```
 # 后端服务器部署
-参考[官方仓库](https://github.com/facebookresearch/audiocraft#usage)部署好gradio后端，获得后端网址。（coblab上部署的可以开启gradio的外链分享）
+参考[官方仓库](https://github.com/facebookresearch/audiocraft#usage)部署好gradio后端，获得后端网址。（colab上部署的可以开启gradio的外链分享）
 
 
 # 使用方法
