@@ -1,6 +1,7 @@
 import io
 from gradio_client import Client
 import nonebot
+import asyncio
 
 from nonebot.plugin import PluginMetadata
 from nonebot import on_command
@@ -37,6 +38,19 @@ async def _(msg: Message = CommandArg()):
 
     await direct.send(MessageSegment.text("audiocraft正在努力作曲中......"))
 
+    try:
+        loop = asyncio.get_event_loop()
+        result = await loop.run_in_executor(None, getMusic, content)
+
+    except Exception as error:
+        await direct.finish(str(error))
+
+    with open(result, "rb") as file:
+        file_content = file.read()
+        audio = io.BytesIO(file_content) 
+        await direct.finish(MessageSegment.record(file=audio))
+
+def getMusic(content):
     client = Client(url)
     result = client.predict(
                     "small",	# str  in 'Model' Radio component
@@ -50,12 +64,7 @@ async def _(msg: Message = CommandArg()):
                     fn_index=0
     )
     print(result)
-
-
-    with open(result, "rb") as file:
-        file_content = file.read()
-        audio = io.BytesIO(file_content) 
-        await direct.finish(MessageSegment.record(file=audio))
+    return result
 
 
 config_url = on_command("%%", block=False, priority=1)
@@ -69,4 +78,6 @@ async def _(msg: Message = CommandArg()):
         await config_url.finish(MessageSegment.text("内容不能为空！"))
     url = url_
     await config_url.finish(MessageSegment.text(f"成功设置地址为{url_}"))
+
+
 
